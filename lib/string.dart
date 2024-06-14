@@ -1,17 +1,17 @@
-// import 'package:flutter/services.dart';
-//
-// List<LogicalKeyboardKey> numbers = [
-//   LogicalKeyboardKey.digit0,
-//   LogicalKeyboardKey.digit1,
-//   LogicalKeyboardKey.digit2,
-//   LogicalKeyboardKey.digit3,
-//   LogicalKeyboardKey.digit4,
-//   LogicalKeyboardKey.digit5,
-//   LogicalKeyboardKey.digit6,
-//   LogicalKeyboardKey.digit7,
-//   LogicalKeyboardKey.digit8,
-//   LogicalKeyboardKey.digit9,
-// ];
+import 'package:flutter/services.dart';
+
+List<LogicalKeyboardKey> numbers = [
+  LogicalKeyboardKey.digit0,
+  LogicalKeyboardKey.digit1,
+  LogicalKeyboardKey.digit2,
+  LogicalKeyboardKey.digit3,
+  LogicalKeyboardKey.digit4,
+  LogicalKeyboardKey.digit5,
+  LogicalKeyboardKey.digit6,
+  LogicalKeyboardKey.digit7,
+  LogicalKeyboardKey.digit8,
+  LogicalKeyboardKey.digit9,
+];
 //
 // List<LogicalKeyboardKey> qToP = [
 //   LogicalKeyboardKey.alphanumeric(),
