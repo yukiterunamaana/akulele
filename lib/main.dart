@@ -1,7 +1,7 @@
-// import 'package:flutter/services.dart';
-// import 'package:flutter/material.dart';
-// import 'package:music_notes/music_notes.dart';
-//
+import 'package:akulele/neck.dart';
+import 'package:akulele/tunings.dart';
+import 'package:flutter/material.dart';
+
 // class UkuleleSimulator extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
@@ -11,3 +11,16 @@
 //     );
 //   }
 // }
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: GuitarNeckWidget(tuning: cTuning));
+  }
+}
