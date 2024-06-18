@@ -4,23 +4,24 @@ import 'package:flutter/services.dart';
 import 'package:flutter_midi/flutter_midi.dart';
 import 'package:music_notes/music_notes.dart' as m;
 
-class FretWidget extends StatefulWidget {
+class NullFretWidget extends StatefulWidget {
   final int note;
-  final LogicalKeyboardKey kbKey;
   //final int octave;
   final FlutterMidi flutterMidi;
-  const FretWidget(
+  final String label;
+  const NullFretWidget(
       {super.key,
       required this.note,
-      required this.kbKey, required this.flutterMidi});
+      required this.flutterMidi,
+      required this.label});
 
   @override
-  _FretWidgetState createState() {
-    return _FretWidgetState();
+  _NullFretWidgetState createState() {
+    return _NullFretWidgetState();
   }
 }
 
-class _FretWidgetState extends State<FretWidget> {
+class _NullFretWidgetState extends State<NullFretWidget> {
   @override
   void initState() {
     super.initState();
@@ -32,33 +33,46 @@ class _FretWidgetState extends State<FretWidget> {
   }
 
   String midiNumberToNoteName(int midiNumber) {
-    final notes = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+    final notes = [
+      'C',
+      'C#',
+      'D',
+      'D#',
+      'E',
+      'F',
+      'F#',
+      'G',
+      'G#',
+      'A',
+      'A#',
+      'B'
+    ];
     return notes[midiNumber % 12];
   }
 
   @override
   Widget build(BuildContext context) {
-    String label = midiNumberToNoteName(widget.note);//.replaceAll(RegExp(r'[0-9]'), '');
-    double size = 32 / label.length;
+    String label =
+        midiNumberToNoteName(widget.note); //.replaceAll(RegExp(r'[0-9]'), '');
     // TODO: implement build
     return Container(
       margin: const EdgeInsets.all(10),
       child: SizedBox(
-        width: 100,
-        height: 80,
+        width: 150,
+        height: 150,
         child: ElevatedButton(
           //color: Colors.blue.shade100,
           style: ElevatedButton.styleFrom(
               backgroundColor:
-            // widget.octave < widget.note.octave
-            //     ?
-            Colors.purple.shade100
-            //  : Colors.purple.shade200,
-            //shape: const CircleBorder(),
-          ),
+                  // widget.octave < widget.note.octave
+                  //     ?
+                  Colors.purple.shade300
+              //  : Colors.purple.shade200,
+              //shape: const CircleBorder(),
+              ),
           child: Text(
             label,
-            style: const TextStyle(fontSize: 32, fontFamily: 'JetBrains Mono'),
+            style: const TextStyle(fontSize: 48, fontFamily: 'JetBrains Mono'),
           ),
           onPressed: () {
             widget.flutterMidi.playMidiNote(midi: 60);

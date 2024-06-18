@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 
 List<LogicalKeyboardKey> row0 = [
+  LogicalKeyboardKey.arrowLeft,
   LogicalKeyboardKey.digit1,
   LogicalKeyboardKey.digit2,
   LogicalKeyboardKey.digit3,
@@ -14,6 +15,7 @@ List<LogicalKeyboardKey> row0 = [
 ];
 
 List<LogicalKeyboardKey> row1 = [
+  LogicalKeyboardKey.arrowUp,
   LogicalKeyboardKey.keyQ,
   LogicalKeyboardKey.keyW,
   LogicalKeyboardKey.keyE,
@@ -24,10 +26,10 @@ List<LogicalKeyboardKey> row1 = [
   LogicalKeyboardKey.keyI,
   LogicalKeyboardKey.keyO,
   LogicalKeyboardKey.keyP
-
 ];
 
 List<LogicalKeyboardKey> row2 = [
+  LogicalKeyboardKey.arrowDown,
   LogicalKeyboardKey.keyA,
   LogicalKeyboardKey.keyS,
   LogicalKeyboardKey.keyD,
@@ -41,6 +43,7 @@ List<LogicalKeyboardKey> row2 = [
 ];
 
 List<LogicalKeyboardKey> row3 = [
+  LogicalKeyboardKey.arrowRight,
   LogicalKeyboardKey.keyZ,
   LogicalKeyboardKey.keyX,
   LogicalKeyboardKey.keyC,
@@ -51,11 +54,4 @@ List<LogicalKeyboardKey> row3 = [
   LogicalKeyboardKey.comma,
   LogicalKeyboardKey.period,
   LogicalKeyboardKey.slash
-];
-
-List<LogicalKeyboardKey> strum = [
-  LogicalKeyboardKey.arrowLeft,
-  LogicalKeyboardKey.arrowUp,
-  LogicalKeyboardKey.arrowDown,
-  LogicalKeyboardKey.arrowRight
 ];

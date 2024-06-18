@@ -1,42 +1,42 @@
 import 'package:music_notes/music_notes.dart';
+
 List<int> cTuning = [
-  67,
-  60,
-  64,
   69,
+  64,
+  60,
+  67,
 ];
 List<int> dTuning = [
-  69,
-  62,
+  71,
   66,
-  71
+  62,
+  69,
 ];
 List<int> gTuning = [
-62,
-67,
-71,
-64
+  64,
+  71,
+  67,
+  62,
 ];
 List<int> aSharpTuning = [
-65,
-70,
-62,
-67
+  67,
+  62,
+  70,
+  65,
 ];
 List<int> slackKeyTuning = [
   67,
-  60,
   64,
+  60,
   67,
 ];
 
 List<int> lowGTuning = [
-  55,
-  60,
-  64,
   69,
+  64,
+  60,
+  55,
 ];
-
 
 // List<Note> cTuning = [
 //   const Note(BaseNote.g),
