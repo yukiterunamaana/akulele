@@ -33,30 +33,69 @@ class _StringWidgetState extends State<StringWidget> {
   Widget build(BuildContext context) {
     List<int> notes = [];
 
-    for (int i=0; i<10; i++)
+    for (int i=0; i<10; i++) {
       notes.add(widget.p+i);
-
-    // m.Pitch p = widget.p.inOctave(4);
-    // notes.add(p);
-    // notes.add(p.transposeBy(m.Interval.m2));
-    // notes.add(p.transposeBy(m.Interval.M2));
-    // notes.add(p.transposeBy(m.Interval.m3));
-    // notes.add(p.transposeBy(m.Interval.M3));
-    // notes.add(p.transposeBy(m.Interval.P4));
-    // notes.add(p.transposeBy(m.Interval.d5));
-    // notes.add(p.transposeBy(m.Interval.P5));
-    // notes.add(p.transposeBy(m.Interval.m6));
-    // notes.add(p.transposeBy(m.Interval.M6));
-    // notes.add(p.transposeBy(m.Interval.m7));
-    // notes.add(widget.tune.transposeBy(m.Interval.M7));
-    // notes.add(widget.tune.transposeBy(m.Interval.P8));
+    }
     return Row(
-      children: List.generate(10, (index) {
-        return FretWidget(
-            note: notes[index],
-            kbKey: widget.keys[index],
-            flutterMidi: widget.flutterMidi,);
-      }),
+      children: [
+      FretWidget(
+      note: notes[0],
+      kbKey: widget.keys[0],
+      flutterMidi: widget.flutterMidi,),
+      const Spacer(),
+        FretWidget(
+          note: notes[1],
+          kbKey: widget.keys[1],
+          flutterMidi: widget.flutterMidi,),
+
+        FretWidget(
+          note: notes[2],
+          kbKey: widget.keys[2],
+          flutterMidi: widget.flutterMidi,),
+
+        FretWidget(
+          note: notes[3],
+          kbKey: widget.keys[3],
+          flutterMidi: widget.flutterMidi,),
+
+        FretWidget(
+          note: notes[4],
+          kbKey: widget.keys[4],
+          flutterMidi: widget.flutterMidi,),
+
+        FretWidget(
+          note: notes[5],
+          kbKey: widget.keys[5],
+          flutterMidi: widget.flutterMidi,),
+
+        FretWidget(
+          note: notes[6],
+          kbKey: widget.keys[6],
+          flutterMidi: widget.flutterMidi,),
+
+        FretWidget(
+          note: notes[7],
+          kbKey: widget.keys[7],
+          flutterMidi: widget.flutterMidi,),
+
+        FretWidget(
+          note: notes[8],
+          kbKey: widget.keys[8],
+          flutterMidi: widget.flutterMidi,),
+
+        FretWidget(
+          note: notes[9],
+          kbKey: widget.keys[9],
+          flutterMidi: widget.flutterMidi,),
+
+
+        // List.generate(10, (index) {
+      //   return FretWidget(
+      //       note: notes[index],
+      //       kbKey: widget.keys[index],
+      //       flutterMidi: widget.flutterMidi,);
+      // }),
+      ],
     );
 
     // return GridView.builder(
