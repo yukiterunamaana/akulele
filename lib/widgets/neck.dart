@@ -18,22 +18,18 @@ class GuitarNeckWidget extends StatelessWidget {
         StringWidget(
           note: tuning[0],
           //flutterMidi: flutterMidi,
-          label: '<-',
         ),
         StringWidget(
           note: tuning[1],
           //flutterMidi: flutterMidi,
-          label: '^',
         ),
         StringWidget(
           note: tuning[2],
           //flutterMidi: flutterMidi,
-          label: 'v',
         ),
         StringWidget(
           note: tuning[3],
           //flutterMidi: flutterMidi,
-          label: '->',
         ),
       ],
     );

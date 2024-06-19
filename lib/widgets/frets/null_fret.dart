@@ -8,12 +8,10 @@ class NullFretWidget extends StatefulWidget {
   final int note;
   //final int octave;
   //final FlutterMidi flutterMidi;
-  final String label;
   const NullFretWidget({
     super.key,
     required this.note,
     //required this.flutterMidi,
-    required this.label,
     //required FlutterMidi flutterMidi
   });
 
@@ -74,7 +72,7 @@ class _NullFretWidgetState extends State<NullFretWidget> {
               ),
           child: Text(
             label,
-            style: const TextStyle(fontSize: 48, fontFamily: 'JetBrains Mono'),
+            style: const TextStyle(fontSize: 40, fontFamily: 'JetBrains Mono'),
           ),
           onPressed: () {
             //widget.flutterMidi.playMidiNote(midi: 60);

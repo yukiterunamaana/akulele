@@ -8,12 +8,11 @@ class StringWidget extends StatefulWidget {
   final int note;
   //final int octave;
   //final FlutterMidi flutterMidi;
-  final String label;
-  const StringWidget(
-      {super.key,
-      required this.note,
-      //required this.flutterMidi,
-      required this.label});
+  const StringWidget({
+    super.key,
+    required this.note,
+    //required this.flutterMidi,
+  });
 
   @override
   _StringWidgetState createState() {
@@ -39,17 +38,15 @@ class _StringWidgetState extends State<StringWidget> {
         flex: 2,
         child: NullFretWidget(
           note: widget.note,
-          label: widget.label,
           //flutterMidi: widget.flutterMidi,
         )));
-    frets.add(const Flexible(child: Divider()));
     for (int i = 1; i <= 12; i++) {
       frets.add(Flexible(
-          flex: 2,
+          //flex: 2,
           child: FretWidget(
-            note: widget.note + i,
-            //flutterMidi: widget.flutterMidi,
-          ))); //(widget.note + i);
+        note: widget.note + i,
+        //flutterMidi: widget.flutterMidi,
+      ))); //(widget.note + i);
     }
     return Row(children: frets);
 

@@ -2,6 +2,7 @@ import 'package:akulele/main.dart';
 import 'package:akulele/midi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_midi_pro/flutter_midi_pro.dart';
 import 'package:music_notes/music_notes.dart' as m;
 
 class FretWidget extends StatefulWidget {
@@ -55,9 +56,9 @@ class _FretWidgetState extends State<FretWidget> {
     label = label.split('').reversed.join()[0];
     // TODO: implement build
     return Container(
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(5),
       child: SizedBox(
-        width: 150,
+        //width: 150,
         height: 75,
         child: ElevatedButton(
           //color: Colors.blue.shade100,
@@ -72,11 +73,11 @@ class _FretWidgetState extends State<FretWidget> {
           child: Text(
             label,
             textAlign: TextAlign.center,
-            style: const TextStyle(fontSize: 48, fontFamily: 'JetBrains Mono'),
+            style: const TextStyle(fontSize: 24, fontFamily: 'JetBrains Mono'),
           ),
-          onPressed: () {
-            //play();
-            //widget.flutterMidi.playMidiNote(midi: 60);
+          onPressed: () async {
+            await MidiPro().playNote(
+                sfId: soundfontId, channel: 0, key: 60, velocity: 127);
             print(
                 '${widget.note} pressed'); //, MIDI code ${widget.note.frequency}');
           },
