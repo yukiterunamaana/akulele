@@ -1,18 +1,18 @@
 import 'package:akulele/main.dart';
+import 'package:akulele/midi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_midi/flutter_midi.dart';
 import 'package:music_notes/music_notes.dart' as m;
 
 class NullFretWidget extends StatefulWidget {
   final int note;
   //final int octave;
-  final FlutterMidi flutterMidi;
+  //final FlutterMidi flutterMidi;
   final String label;
   const NullFretWidget(
       {super.key,
       required this.note,
-      required this.flutterMidi,
+      //required this.flutterMidi,
       required this.label});
 
   @override
@@ -59,7 +59,7 @@ class _NullFretWidgetState extends State<NullFretWidget> {
       margin: const EdgeInsets.all(10),
       child: SizedBox(
         width: 150,
-        height: 150,
+        height: 75,
         child: ElevatedButton(
           //color: Colors.blue.shade100,
           style: ElevatedButton.styleFrom(
@@ -75,7 +75,8 @@ class _NullFretWidgetState extends State<NullFretWidget> {
             style: const TextStyle(fontSize: 48, fontFamily: 'JetBrains Mono'),
           ),
           onPressed: () {
-            widget.flutterMidi.playMidiNote(midi: 60);
+            //widget.flutterMidi.playMidiNote(midi: 60);
+            play();
             print(
                 '${widget.note} pressed'); //, MIDI code ${widget.note.frequency}');
           },
