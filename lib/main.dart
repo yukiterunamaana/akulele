@@ -2,7 +2,7 @@ import 'package:akulele/widgets/neck.dart';
 import 'package:akulele/tunings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_midi/flutter_midi.dart';
+//import 'package:flutter_midi/flutter_midi.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,23 +17,23 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final _flutterMidi = FlutterMidi();
+  //final _flutterMidi = FlutterMidi();
   final String _value = 'assets/Caed_s_Ukulele.sf2';
   bool strum = false;
   bool keyboard = true;
 
   @override
   void initState() {
-    _flutterMidi.prepare(sf2: null);
-    load(_value);
+    // _flutterMidi.prepare(sf2: null);
+    // load(_value);
     super.initState();
   }
 
   void load(String asset) async {
     print('Loading File...');
-    _flutterMidi.unmute();
+    //_flutterMidi.unmute();
     ByteData byte = await rootBundle.load(asset);
-    _flutterMidi.prepare(sf2: byte, name: _value.replaceAll('assets/', ''));
+    //_flutterMidi.prepare(sf2: byte, name: _value.replaceAll('assets/', ''));
   }
 
   @override
@@ -78,7 +78,7 @@ class _MyAppState extends State<MyApp> {
               ),
               body: GuitarNeckWidget(
                 tuning: cTuning,
-                flutterMidi: _flutterMidi,
+                //flutterMidi: _flutterMidi,
               ))),
     );
   }

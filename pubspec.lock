@@ -78,32 +78,19 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
-  flutter_midi:
+  flutter_midi_pro:
     dependency: "direct main"
     description:
-      name: flutter_midi
-      sha256: "000e513736a316439b3cf5cf67066a3093ea0dc36c89b69734383554d3b2f757"
+      name: flutter_midi_pro
+      sha256: ba53de4f3f2e2a584223b45b20317b959d89aa271c2de450c60eab9287b58ee4
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "3.1.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_web_plugins:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      sha256: f2c445dce49627136094980615a031419f7f3eb393237e4ecd97ac15dea343f3
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.7"
   leak_tracker:
     dependency: transitive
     description:
@@ -160,14 +147,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.0"
-  midi_player:
-    dependency: "direct main"
-    description:
-      name: midi_player
-      sha256: c807e9679d47920acff377b50e4da0835c0103cc0aed8556aa17a71cf0da4df4
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.0"
   music_notes:
     dependency: "direct main"
     description:
@@ -216,14 +195,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.1"
-  path_provider_macos:
-    dependency: transitive
-    description:
-      name: path_provider_macos
-      sha256: cd57cb98a30ce9d12fdd1896d9d3b0517ce689f942de6ccd2708cd39b3d18a7c
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.7"
   path_provider_platform_interface:
     dependency: transitive
     description:
@@ -309,14 +280,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.1"
-  tonic:
-    dependency: transitive
-    description:
-      name: tonic
-      sha256: "4c5f3cc7d41cb256822aa5875cd89ccd94a2854912db3dddf4425a46d3d3dd15"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.5"
   vector_math:
     dependency: transitive
     description:

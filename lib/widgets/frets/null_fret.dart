@@ -9,11 +9,13 @@ class NullFretWidget extends StatefulWidget {
   //final int octave;
   //final FlutterMidi flutterMidi;
   final String label;
-  const NullFretWidget(
-      {super.key,
-      required this.note,
-      //required this.flutterMidi,
-      required this.label});
+  const NullFretWidget({
+    super.key,
+    required this.note,
+    //required this.flutterMidi,
+    required this.label,
+    //required FlutterMidi flutterMidi
+  });
 
   @override
   _NullFretWidgetState createState() {
@@ -76,7 +78,7 @@ class _NullFretWidgetState extends State<NullFretWidget> {
           ),
           onPressed: () {
             //widget.flutterMidi.playMidiNote(midi: 60);
-            play();
+            //play();
             print(
                 '${widget.note} pressed'); //, MIDI code ${widget.note.frequency}');
           },

@@ -10,7 +10,8 @@ class FretWidget extends StatefulWidget {
   //final FlutterMidi flutterMidi;
   const FretWidget({
     super.key,
-    required this.note, //required this.flutterMidi
+    required this.note,
+    //required FlutterMidi flutterMidi, //required this.flutterMidi
   });
 
   @override
@@ -74,7 +75,7 @@ class _FretWidgetState extends State<FretWidget> {
             style: const TextStyle(fontSize: 48, fontFamily: 'JetBrains Mono'),
           ),
           onPressed: () {
-            play();
+            //play();
             //widget.flutterMidi.playMidiNote(midi: 60);
             print(
                 '${widget.note} pressed'); //, MIDI code ${widget.note.frequency}');
