@@ -5,12 +5,16 @@ import 'package:flutter/services.dart';
 import 'package:music_notes/music_notes.dart' as m;
 
 class StringWidget extends StatefulWidget {
-  final int note;
+  final ValueNotifier<List<String>> scale;
+  final ValueNotifier<List<int>> tuning;
+  final int stringNumber;
   //final int octave;
   //final FlutterMidi flutterMidi;
   const StringWidget({
     super.key,
-    required this.note,
+    required this.scale,
+    required this.tuning,
+    required this.stringNumber,
     //required this.flutterMidi,
   });
 
@@ -35,16 +39,20 @@ class _StringWidgetState extends State<StringWidget> {
   Widget build(BuildContext context) {
     List<Widget> frets = [];
     frets.add(Flexible(
-        flex: 2,
-        child: NullFretWidget(
-          note: widget.note,
-          //flutterMidi: widget.flutterMidi,
-        )));
+      flex: 2,
+      child: Container(),
+      // child: NullFretWidget(
+      //   note: widget.note,
+      //   //flutterMidi: widget.flutterMidi,
+      // )
+    ));
     for (int i = 1; i <= 12; i++) {
       frets.add(Flexible(
           //flex: 2,
           child: FretWidget(
-        note: widget.note + i,
+        stringNumber: widget.stringNumber, fretPosition: i,
+        scale: widget.scale,
+        tuning: widget.tuning,
         //flutterMidi: widget.flutterMidi,
       ))); //(widget.note + i);
     }

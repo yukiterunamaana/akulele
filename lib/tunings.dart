@@ -1,4 +1,9 @@
-import 'package:music_notes/music_notes.dart';
+import 'package:flutter/material.dart';
+
+class Tuning {
+  final ValueNotifier<List<int>> tuning = ValueNotifier<List<int>>(cTuning);
+  void setTuning(List<int> t) => tuning.value = t;
+}
 
 List<int> cTuning = [
   69,

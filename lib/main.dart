@@ -24,8 +24,15 @@ class _MyAppState extends State<MyApp> {
   final midiPro = MidiPro();
   final String _value = path;
   bool strum = false;
-  List<int> selectedTuning = cTuning;
-  List<String> selectedScale = chromaticScale;
+  // List<int> selectedTuning = cTuning;
+  // List<String> selectedScale = chromaticScale;
+
+  final ValueNotifier<List<String>> scale = ValueNotifier(chromaticScale);
+  final ValueNotifier<List<int>> tuning = ValueNotifier(cTuning);
+
+  // Scale scale = Scale();
+
+  // Tuning tuning = Tuning();
 
   @override
   void initState() {
@@ -59,10 +66,10 @@ class _MyAppState extends State<MyApp> {
             appBar: AppBar(
               actions: [
                 DropdownButton<List<String>>(
-                  value: selectedScale, // Initialize with a default value
+                  value: chromaticScale, // Initialize with a default value
                   onChanged: (newValue) {
                     setState(() {
-                      selectedScale = newValue!;
+                      scale.value = newValue!;
                     });
                   },
                   items: [
@@ -82,10 +89,10 @@ class _MyAppState extends State<MyApp> {
                   ],
                 ),
                 DropdownButton<List<int>>(
-                  value: selectedTuning, // Initialize with a default value
+                  value: cTuning, // Initialize with a default value
                   onChanged: (newValue) {
                     setState(() {
-                      selectedTuning = newValue!;
+                      tuning.value = newValue!;
                     });
                   },
                   items: [
@@ -130,7 +137,9 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
             body: GuitarNeckWidget(
-              tuning: cTuning,
+              //tuning_list: cTuning,
+              scale: scale,
+              tuning: tuning,
               //flutterMidi: _flutterMidi,
             )));
   }

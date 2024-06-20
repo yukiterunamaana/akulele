@@ -2,11 +2,14 @@ import 'package:akulele/widgets/string.dart';
 import 'package:flutter/material.dart';
 
 class GuitarNeckWidget extends StatelessWidget {
-  final List<int> tuning;
+  final ValueNotifier<List<String>> scale;
+  final ValueNotifier<List<int>> tuning;
+
   //final FlutterMidi flutterMidi;
 
   const GuitarNeckWidget({
     super.key,
+    required this.scale,
     required this.tuning, // required this.flutterMidi
   });
 
@@ -16,20 +19,28 @@ class GuitarNeckWidget extends StatelessWidget {
     return Column(
       children: [
         StringWidget(
-          note: tuning[0],
           //flutterMidi: flutterMidi,
+          scale: scale,
+          tuning: tuning,
+          stringNumber: 0,
         ),
         StringWidget(
-          note: tuning[1],
           //flutterMidi: flutterMidi,
+          scale: scale,
+          tuning: tuning,
+          stringNumber: 1,
         ),
         StringWidget(
-          note: tuning[2],
           //flutterMidi: flutterMidi,
+          scale: scale,
+          tuning: tuning,
+          stringNumber: 2,
         ),
         StringWidget(
-          note: tuning[3],
           //flutterMidi: flutterMidi,
+          scale: scale,
+          tuning: tuning,
+          stringNumber: 3,
         ),
       ],
     );

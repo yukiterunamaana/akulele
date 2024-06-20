@@ -1,3 +1,11 @@
+import 'package:flutter/material.dart';
+
+class Scale {
+  final ValueNotifier<List<String>> scale =
+      ValueNotifier<List<String>>(chromaticScale);
+  void setScale(List<String> s) => scale.value = s;
+}
+
 List<String> chromaticScale = [
   'C',
   'C#',
