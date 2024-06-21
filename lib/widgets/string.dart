@@ -1,5 +1,4 @@
-import 'package:akulele/widgets/frets/fret.dart';
-import 'package:akulele/widgets/frets/null_fret.dart';
+import 'package:akulele/widgets/fret.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:music_notes/music_notes.dart' as m;
@@ -38,23 +37,21 @@ class _StringWidgetState extends State<StringWidget> {
   @override
   Widget build(BuildContext context) {
     List<Widget> frets = [];
-    frets.add(Flexible(
-      flex: 2,
-      child: Container(),
-      // child: NullFretWidget(
-      //   note: widget.note,
-      //   //flutterMidi: widget.flutterMidi,
-      // )
-    ));
-    for (int i = 1; i <= 12; i++) {
-      frets.add(Flexible(
-          //flex: 2,
-          child: FretWidget(
+    // frets.add(Flexible(
+    //   flex: 2,
+    //   child: Container(),
+    //   // child: NullFretWidget(
+    //   //   note: widget.note,
+    //   //   //flutterMidi: widget.flutterMidi,
+    //   // )
+    // ));
+    for (int i = 0; i <= 12; i++) {
+      frets.add(FretWidget(
         stringNumber: widget.stringNumber, fretPosition: i,
         scale: widget.scale,
         tuning: widget.tuning,
         //flutterMidi: widget.flutterMidi,
-      ))); //(widget.note + i);
+      )); //(widget.note + i);
     }
     return Row(children: frets);
 
