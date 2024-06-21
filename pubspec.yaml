@@ -93,6 +93,10 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/Caed_s_Ukulele.sf2
+    - assets/Chateau.sf2
+    - assets/Chris.sf2
+    - assets/neighbor.sf2
+    - assets/smol.sf2
   fonts:
     - family: JetBrains Mono
       fonts:

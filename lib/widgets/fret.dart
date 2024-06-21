@@ -1,18 +1,14 @@
-import 'dart:ffi';
-
-import 'package:akulele/main.dart';
 import 'package:akulele/midi.dart';
 import 'package:akulele/scales.dart';
-import 'package:akulele/tunings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_midi_pro/flutter_midi_pro.dart';
-import 'package:music_notes/music_notes.dart' as m;
 
 class FretWidget extends StatefulWidget {
   //final int note;
   final ValueNotifier<List<String>> scale;
   final ValueNotifier<List<int>> tuning;
+  final ValueNotifier<MidiPro> midiProNotifier;
+  final ValueNotifier<int> soundfontIdNotifier;
 
   final int stringNumber;
   final int fretPosition;
@@ -26,6 +22,8 @@ class FretWidget extends StatefulWidget {
     required this.fretPosition,
     required this.scale,
     required this.tuning,
+    required this.midiProNotifier,
+    required this.soundfontIdNotifier,
     //required FlutterMidi flutterMidi, //required this.flutterMidi
   });
 
@@ -104,7 +102,7 @@ class _FretWidgetState extends State<FretWidget> {
                                       await MidiPro().playNote(
                                           sfId: soundfontId,
                                           channel: 0,
-                                          key: 60,
+                                          key: midi,
                                           velocity: 127);
                                       print(
                                           '${midi} pressed'); //, MIDI code ${widget.note.frequency}');

@@ -1,14 +1,11 @@
 import 'package:akulele/midi.dart';
-import 'package:akulele/midi_example.dart';
 import 'package:akulele/scales.dart';
 import 'package:akulele/widgets/neck.dart';
 import 'package:akulele/tunings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_midi_pro/flutter_midi_pro.dart';
 
 void main() {
-  //runApp(MyPianoApp());
   runApp(MyApp());
 }
 
@@ -60,7 +57,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     //loadSoundFontAndPlayNote(bankIndex.value, instrumentIndex.value);
+    final ValueNotifier<MidiPro> midiProNotifier = ValueNotifier(MidiPro());
+    final ValueNotifier<int> soundfontIdNotifier = ValueNotifier(0);
+    Future<void> loadSoundfont() async {
+      final int soundfontId = await midiProNotifier.value
+          .loadSoundfont(path: 'assets/neighbor.sf2', bank: 0, program: 0);
+      soundfontIdNotifier.value = soundfontId;
+    }
 
+    loadSoundfont();
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
@@ -140,6 +145,8 @@ class _MyAppState extends State<MyApp> {
               //tuning_list: cTuning,
               scale: scale,
               tuning: tuning,
+              midiProNotifier: midiProNotifier,
+              soundfontIdNotifier: soundfontIdNotifier,
               //flutterMidi: _flutterMidi,
             )));
   }

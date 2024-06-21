@@ -1,11 +1,12 @@
 import 'package:akulele/widgets/fret.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:music_notes/music_notes.dart' as m;
+import 'package:flutter_midi_pro/flutter_midi_pro.dart';
 
 class StringWidget extends StatefulWidget {
   final ValueNotifier<List<String>> scale;
   final ValueNotifier<List<int>> tuning;
+  final ValueNotifier<MidiPro> midiProNotifier;
+  final ValueNotifier<int> soundfontIdNotifier;
   final int stringNumber;
   //final int octave;
   //final FlutterMidi flutterMidi;
@@ -14,6 +15,8 @@ class StringWidget extends StatefulWidget {
     required this.scale,
     required this.tuning,
     required this.stringNumber,
+    required this.midiProNotifier,
+    required this.soundfontIdNotifier,
     //required this.flutterMidi,
   });
 
@@ -50,6 +53,8 @@ class _StringWidgetState extends State<StringWidget> {
         stringNumber: widget.stringNumber, fretPosition: i,
         scale: widget.scale,
         tuning: widget.tuning,
+        midiProNotifier: widget.midiProNotifier,
+        soundfontIdNotifier: widget.soundfontIdNotifier,
         //flutterMidi: widget.flutterMidi,
       )); //(widget.note + i);
     }
